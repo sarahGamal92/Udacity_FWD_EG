@@ -215,20 +215,22 @@ def user_stats(df):
     # TO DO: Display counts of user types
     user_Types = df['User Type'].value_counts()
     print("User Types are:\n" + str(user_Types))
-    
+
     # TO DO: Display counts of gender
     if 'Gender' in df:
-        gender= df['Gender'].value_counts()
+        gender = df['Gender'].value_counts()
 
         print("Gender Distribution is:\n" + str(gender))
-    
+
     # TO DO: Display earliest, most recent, and most common year of birth
 
     print("\nThis took %s seconds." % (time.time() - start_time))
 
-def display_data(df):    
 
-    view_data = input("Would you like to view 5 rows of individual trip data? Enter yes or no?")
+def display_data(df):
+
+    view_data = input(
+        "Would you like to view 5 rows of individual trip data? Enter yes or no?")
     start_loc = 0
     while view_data:
         print(df.iloc[start_loc:start_loc+5])
@@ -237,12 +239,9 @@ def display_data(df):
         if view_display == 'yes':
             continue
         else:
-            break    
+            break
 
-    
-    
-    
-    
+
 def main():
     city = ""
     day = ""
